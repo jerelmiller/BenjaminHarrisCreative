@@ -1,3 +1,140 @@
+$lightGrey: #97999D;
+$mediumGrey: #595B5D;
+$darkGrey: #2F2F2F;
+$offwhite: #EFEFEF;
+
+/* Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
 body {
-  background: black
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+/* General Styles */
+body {
+  background: $offwhite;
+  font-family: 'Helvetica Neue', serif
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.relativePosition {
+  position: relative;
+}
+.clear {
+  clear: both;
+}
+hr {
+  border: 4px solid $darkGrey;
+}
+
+/* Positioning */
+.top10 {
+  top: 10px;
+}
+.bottom10 {
+  bottom: 10px;
+}
+.marginTop5 {
+  margin-top: 5px;
+}
+.marginRight10 {
+  margin-right: 10px;
+}
+.marginRight20 {
+  margin-right: 20px;
+}
+
+/* Header styles */
+.header {
+  background: $darkGrey;
+  padding: 20px;
+  color: $lightGrey;
+  .headerContainer {
+    width: 60%;
+    min-width: 800px;
+    margin: 0 auto;
+    .logo {
+      width: 415px;
+    }
+  }
+}
+.bars {
+  .bar {
+    background: $lightGrey;
+    height: 40px;
+    margin: 5px 0;
+  }
+  .top {
+    font-size: 25px;
+    font-weight: 200;
+    .bar {
+      width: 100px;
+    }
+  }
+  .middle {
+    .bar {
+      width: 150px;
+    }
+    .name {
+      font-size: 40px;
+    }
+    .name.dark {
+      color: $mediumGrey;
+    }
+  }
+  .bottom {
+    .bar {
+      width: 200px;
+    }
+    .company {
+      font-size: 30px;
+      letter-spacing: -1px;
+    }
+  }
+
 }

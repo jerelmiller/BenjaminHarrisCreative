@@ -11,4 +11,23 @@
     = csrf_meta_tag
 
   %body
+    .header
+      .headerContainer
+        .logo.left
+          .bars
+            .top
+              .bar.left
+              %span.role.right.relativePosition.top10.marginRight20 director | producer
+              .clear
+            .middle
+              .bar.left
+              %span.name.dark.right.marginTop5 harris
+              %span.name.right.marginTop5 benjamin
+              .clear
+            .bottom
+              .bar.left
+              %span.company.right.relativePosition.bottom10 CREATIVE
+              .clear
+        .clear
+    %hr
     = yield
