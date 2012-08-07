@@ -92,14 +92,28 @@ hr {
 /* Header styles */
 .header {
   background: $darkGrey;
-  padding: 20px;
+  padding: 20px 10px 10px;
   color: $lightGrey;
   .headerContainer {
     width: 60%;
-    min-width: 800px;
+    min-width: 900px;
     margin: 0 auto;
     .logo {
       width: 415px;
+    }
+  }
+}
+ul.menu {
+  list-style-type: none;
+  padding-top: 120px;
+  li {
+    display: inline;
+    margin-left: 20px;
+    a {
+      font-size: 30px;
+      font-weight: 500;
+      color: $lightGrey;
+      text-decoration: none;
     }
   }
 }
