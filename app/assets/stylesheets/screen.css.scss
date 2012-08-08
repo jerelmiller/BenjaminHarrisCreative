@@ -170,9 +170,46 @@ hr {
 
 /* Footer Styles */
 .footer {
-  height: 300px;
+  color: $offwhite;
   background: $darkGrey;
+  padding: 0 20px 20px 0;
   .container {
     padding: 40px 0 0 100px;
+  }
+  .bio, .friends {
+    margin-right: 50px;
+  }
+  .bio, .friends, .followMe {
+    span.title {
+      font-size: 20px;
+      line-height: 22px;
+      font-weight: 200;
+    }
+  }
+  .bio {
+    width: 410px;
+    
+    span.body {
+      font-size: 11px;
+      p {
+        line-height: 18px;
+      }
+    }
+    img {
+      margin: 0 10px 10px 0;
+    }
+  }
+  .friends {
+    ul {
+      list-style-type: none;
+      padding-top: 20px;
+      font-weight: 200;
+      li {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .copyright {
+    font-weight: 200;
   }
 }
