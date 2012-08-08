@@ -102,6 +102,10 @@ hr {
   .logo {
     width: 415px;
   }
+  a {
+    color: $lightGrey;
+    text-decoration: none;
+  }
   ul.menu {
     list-style-type: none;
     padding-top: 120px;
@@ -111,8 +115,6 @@ hr {
       a {
         font-size: 30px;
         font-weight: 500;
-        color: $lightGrey;
-        text-decoration: none;
       }
     }
   }
