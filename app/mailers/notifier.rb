@@ -3,6 +3,6 @@ class Notifier < ActionMailer::Base
 
   def contact(name, subject, email, message)
     @message, @email, @name = message, email, name
-    mail to: 'benjamin.harris123@gmail.com', subject: subject
+    mail to: 'jerelmiller@gmail.com', subject: subject
   end
 end
