@@ -1,0 +1,5 @@
+- unless flash.empty?
+  - flash.each do |key, msg|
+    %div{:class => "alert alert-#{key}"}
+      %button.close{'data-dismiss' => 'alert'} &times;
+      = msg

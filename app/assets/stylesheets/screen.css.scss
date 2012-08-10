@@ -3,6 +3,19 @@ $mediumGrey: #595B5D;
 $darkGrey: #2F2F2F;
 $offwhite: #EFEFEF;
 
+/* Mixins */
+@mixin box_shadow($xOffset: 0, $yOffset: 0, $blur: 15px, $color: #222) {
+  -webkit-box-shadow: $xOffset $yOffset $blur $color;
+  -moz-box-shadow: $xOffset $yOffset $blur $color;
+  box-shadow: $xOffset $yOffset $blur $color;
+}
+
+@mixin border_radius($radius: 2px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
 /* Reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -70,16 +83,53 @@ body {
 }
 hr {
   border: 4px solid $darkGrey;
+  margin-bottom: 0;
 }
-.container {
-  width: 60%;
-  min-width: 900px;
+.container { 
+  width: 1000px;
   margin: 0 auto;
+  @include box_shadow
+}
+iframe {
+  margin: 0 auto;
+  display: block;
+}
+
+/* Form styling */
+form {
+  input[type=text], textarea {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    @include border_radius(2px);
+    border: 1px solid #AAA;
+  }
+  textarea {
+    width: 500px;
+    height: 150px;
+  }
+  .input {
+    margin-bottom: 10px;
+  }
+  label {
+    display: block;
+    width: 200px;
+    text-align: right;
+    margin: 0px 20px 0 0;
+    float: left;
+    font-size: 20px;
+    span.required {
+      color: red;
+    }
+  }
 }
 
 /* Positioning */
 .top10 {
   top: 10px;
+}
+.top3 {
+  top: 3px;
 }
 .bottom10 {
   bottom: 10px;
@@ -97,7 +147,7 @@ hr {
 /* Header styles */
 .header {
   background: $darkGrey;
-  padding: 20px 10px 10px;
+  padding: 15px 20px 10px;
   color: $lightGrey;
   .logo {
     width: 415px;
@@ -158,26 +208,27 @@ hr {
 .sectionTitle {
   border-bottom: 10px solid $darkGrey;
   font-size: 30px;
-  .container {
-    padding-left: 100px;
-    margin-top: 100px;
-  }
+  padding: 10px 20px;
 }
-.demoReel, .recentVideos, .recentBlogs {
+.sectionTitle.noBorder {
+  border: 0;
+}
+.recentVideos, .recentBlogs {
   height: 300px;
 }
 .demoReel {
   background: $darkGrey;
+  padding: 0 20px;
+}
+.contactForm {
+  padding: 20px;
 }
 
 /* Footer Styles */
 .footer {
   color: $offwhite;
   background: $darkGrey;
-  padding: 0 20px 20px 0;
-  .container {
-    padding: 40px 0 0 100px;
-  }
+  padding: 20px;
   .bio, .friends {
     margin-right: 50px;
   }

@@ -1,0 +1,24 @@
+= form_tag contact_index_path do
+  .input
+    %label.relativePosition.top10 
+      Name
+      %span.required *
+    = text_field_tag 'name'
+
+  .input
+    %label.relativePosition.top10 
+      Email Address
+      %span.required *
+    = text_field_tag 'email'
+
+  .input
+    %label.relativePosition.top3 Subject &nbsp;
+    = select_tag 'subject', options_for_select(['Just Sayin Hi', 'Request a bid', 'I want more information'])
+
+  .input
+    %label.relativePosition.top10 Message &nbsp;
+    = text_area_tag 'message'
+
+  .submit
+    %label &nbsp;
+    = submit_tag 'Send', class: 'btn btn-primary btn-large'
