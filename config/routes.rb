@@ -6,6 +6,11 @@ BenHarrisCreative::Application.routes.draw do
   # first created -> highest priority.
 
   root :to => 'home#index'
+  match 'blog' => 'home#blog'
+  match 'video' => 'home#video'
+  match 'clients' => 'home#clients'
+  
+  resources :contact, :only => [:index, :create], :controller => 'contact'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

@@ -2,6 +2,8 @@ $lightGrey: #97999D;
 $mediumGrey: #595B5D;
 $darkGrey: #2F2F2F;
 $offwhite: #EFEFEF;
+$outlineColor: #BBB;
+$secondary_font_family: Futura, Helvetica;
 
 /* Mixins */
 @mixin box_shadow($xOffset: 0, $yOffset: 0, $blur: 15px, $color: #222) {
@@ -91,8 +93,10 @@ hr {
   @include box_shadow
 }
 iframe {
-  margin: 0 auto;
   display: block;
+}
+iframe.center {
+  margin: 0 auto;
 }
 
 /* Form styling */
@@ -213,15 +217,73 @@ form {
 .sectionTitle.noBorder {
   border: 0;
 }
-.recentVideos, .recentBlogs {
+.recentBlogs {
   height: 300px;
+}
+.recentVideos {
+  padding: 20px;
+  .left:first-child {
+    border-right: 1px solid $outlineColor;
+  }
+  iframe {
+    padding-left: 9px;
+    padding-right: 20px;
+  }
+  iframe.last {
+    padding-left: 20px;
+    padding-right: 0px;
+  }
 }
 .demoReel {
   background: $darkGrey;
   padding: 0 20px;
 }
+.video {
+  padding: 20px; 
+  .left {
+    border-right: 1px solid $outlineColor;
+  }
+  iframe, .videoDescription{
+    margin: 0 20px 0 0;
+    border-bottom: 1px solid $outlineColor;
+    padding: 20px 0;
+  }
+  iframe:last-child, .videoDescription:last-child {
+    margin-bottom: 30px;
+  }
+  .videoDescription {
+    height: 281px;
+    width: 400px;
+    .descriptionTitle {
+      font-size: 25px;
+      text-align: right;
+      padding-bottom: 20px;
+      width: 84%;
+      float: right;
+      font-family: $secondary_font_family;
+      border-bottom: 1px solid $outlineColor;
+    }
+  }
+}
 .contactForm {
   padding: 20px;
+}
+.blog {
+  padding: 20px;
+  font-size: 50px;
+  text-align: center;
+}
+.social {
+  margin-top: 20px;
+  a {
+    span {
+      margin-left: 10px;
+    }
+    color: $offwhite;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 300;
+  }
 }
 
 /* Footer Styles */
