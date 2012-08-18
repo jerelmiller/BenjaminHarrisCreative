@@ -227,7 +227,6 @@ form {
   }
   .nav {
     background: $offwhite;
-    // padding-top: 120px;
     position: relative;
     top: 120px;
     display: block;
@@ -319,13 +318,7 @@ form {
 .social {
   margin-top: 20px;
   a {
-    span {
-      margin-left: 10px;
-    }
-    color: $offwhite;
-    font-size: 18px;
-    text-decoration: none;
-    font-weight: 300;
+    margin-right: 10px;
   }
 }
 
@@ -333,28 +326,47 @@ form {
 .footer {
   color: $offwhite;
   background: $darkGrey;
-  padding: 20px;
-  .bio, .friends {
+  padding-top: 20px;
+  .contact, .friends {
     margin-right: 50px;
   }
-  .bio, .friends, .followMe {
+  .contact, .friends, .followMe {
     span.title {
-      font-size: 20px;
+      font-size: 22px;
       line-height: 22px;
       font-weight: 200;
     }
   }
-  .bio {
-    width: 410px;
+  // .bio {
+  //   width: 410px;
     
-    span.body {
-      font-size: 11px;
-      p {
-        line-height: 18px;
+  //   span.body {
+  //     font-size: 11px;
+  //     p {
+  //       line-height: 18px;
+  //     }
+  //   }
+  //   img {
+  //     margin: 0 10px 10px 0;
+  //   }
+  // }
+  .contact {
+    .body {
+      margin-top: 20px;
+      .item {
+        margin-bottom: 15px;
+        a {
+          color: $lightGrey;
+          border-bottom: 2px solid $darkGrey;
+          @include transition(color);
+          @include transition(border);
+          &:hover {
+            border-bottom: 2px solid $hoverBlue;
+            color: $hoverBlue;
+            text-decoration: none;
+          }
+        }
       }
-    }
-    img {
-      margin: 0 10px 10px 0;
     }
   }
   .friends {
@@ -369,5 +381,9 @@ form {
   }
   .copyright {
     font-weight: 200;
+    font-size: 12px;
+    padding: 20px 0 10px;
+    text-align: center;
+    color: $lightGrey;
   }
 }
