@@ -219,9 +219,7 @@ form {
         font-size: 30px;
         font-weight: 500;
         margin-top: 10px;
-        &:hover {
-          text-shadow: 1px 1px #FFF;
-        }
+        text-shadow: 1px 1px #FFF;
       }
     }
   }
@@ -238,6 +236,7 @@ form {
 .sectionTitle {
   font-size: 30px;
   padding: 40px 0 20px;
+  text-shadow: 1px 1px #FFF;
 }
 .sectionTitle.noBorder {
   border: 0;
@@ -262,7 +261,7 @@ form {
     font-weight: 700;
     text-shadow: 2px 2px #FFF;
   }
-  .view_work {
+  .viewWork {
     font-size: 25px;
     a {
       color: $lightGrey;
@@ -271,11 +270,11 @@ form {
       display: inline-block;
       padding-top: 10px;
       border-top: 2px solid $offwhite;
+      text-shadow: 1px 1px #FFF;
       &:hover {
         color: $hoverBlue;
         text-decoration: none;
         border-top: 2px solid $darkGrey;
-        text-shadow: 1px 1px #FFF;
       }
     }
   }
@@ -327,6 +326,22 @@ form {
   color: $offwhite;
   background: $darkGrey;
   padding-top: 20px;
+  a {
+    color: $lightGrey;
+    border-bottom: 2px solid $darkGrey;
+    @include transition(color);
+    @include transition(border, 0.3s);
+    &:hover {
+      border-bottom: 2px solid $hoverBlue;
+      color: $hoverBlue;
+      text-decoration: none;
+    }
+  }
+  .social a {
+    &:hover {
+      border-bottom: 0
+    }
+  }
   .contact, .friends {
     margin-right: 50px;
   }
@@ -337,35 +352,11 @@ form {
       font-weight: 200;
     }
   }
-  // .bio {
-  //   width: 410px;
-    
-  //   span.body {
-  //     font-size: 11px;
-  //     p {
-  //       line-height: 18px;
-  //     }
-  //   }
-  //   img {
-  //     margin: 0 10px 10px 0;
-  //   }
-  // }
   .contact {
     .body {
       margin-top: 20px;
       .item {
         margin-bottom: 15px;
-        a {
-          color: $lightGrey;
-          border-bottom: 2px solid $darkGrey;
-          @include transition(color);
-          @include transition(border);
-          &:hover {
-            border-bottom: 2px solid $hoverBlue;
-            color: $hoverBlue;
-            text-decoration: none;
-          }
-        }
       }
     }
   }
