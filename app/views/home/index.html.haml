@@ -1,16 +1,21 @@
 - content_for :title do
   Benjamin Harris Creative
-  
-.sectionTitle.noBorder
-  demoREEL
+
 .demoReel
-  %iframe.center{ src: "http://player.vimeo.com/video/47149681", width: "500", height: "281", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true }
+  .container
+    %iframe{ src: add_vimeo_params("http://player.vimeo.com/video/47149681"), width: "940", height: "528", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true }
+.spacer
 .sectionTitle
-  recentVIDEOS
+  .container featuredWORK
 .recentVideos
-  %iframe.left{src: "http://player.vimeo.com/video/23220210", width: "450", height: "252", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
-  %iframe.left.last{src: "http://player.vimeo.com/video/32883090", width: "450", height: "252", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
-  .clear
-/ .sectionTitle
-/   recentBLOGS
-/ .recentBlogs
+  .container
+    %iframe.left{src: add_vimeo_params("http://player.vimeo.com/video/23220210"), width: "460", height: "257", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
+    %iframe.left.last{src: add_vimeo_params("http://player.vimeo.com/video/32883090"), width: "460", height: "257", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
+.spacer
+.statement
+  .container
+    %p
+      I AM IN THE BUSINESS OF BLOWING MINDS...
+      %br
+      AND BUSINESS IS GOOD
+    %span.view_work= link_to 'viewVIDEOS', video_path

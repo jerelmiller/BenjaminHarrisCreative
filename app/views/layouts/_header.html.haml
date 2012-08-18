@@ -1,23 +1,13 @@
-.header
-  = link_to root_path do
-    .logo.left
-      .bars
-        .top
-          .bar.left
-          .clear
-        .middle
-          .bar.left
-          %span.name.dark.right.marginTop5 harris
-          %span.name.right.marginTop5 benjamin
-          .clear
-        .bottom
-          .bar.left
-          %span.company.right.relativePosition.bottom10 CREATIVE
-          .clear
-  .nav.right
-    %ul.menu
-      %li= link_to 'blog', blog_path
-      %li= link_to 'video', video_path
-      %li= link_to 'contact', contact_index_path
-  .clear
-%hr
+.bar.small
+.container
+  .header
+    = link_to root_path do
+      .logo.left
+        .colorLogo
+    .nav.right
+      %ul.menu.right
+        %li= link_to 'blog', blog_path
+        %li= link_to 'video', video_path
+        %li= link_to 'clients', video_path
+        %li= link_to 'contact', contact_index_path
+    .clear

@@ -2,6 +2,7 @@ $lightGrey: #97999D;
 $mediumGrey: #595B5D;
 $darkGrey: #2F2F2F;
 $offwhite: #EFEFEF;
+$hoverBlue: #88A1B7;
 $outlineColor: #BBB;
 $secondary_font_family: Futura, Helvetica;
 
@@ -16,6 +17,14 @@ $secondary_font_family: Futura, Helvetica;
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
   border-radius: $radius;
+}
+
+@mixin transition($element, $time: 0.5s) {
+  -webkit-transition: $element $time;
+  -moz-transition: $element $time;
+  -ms-transition: $element $time;
+  -o-transition: $element $time;
+  transition: $element $time;
 }
 
 /* Reset */
@@ -83,20 +92,37 @@ body {
 .clear {
   clear: both;
 }
-hr {
-  border: 4px solid $darkGrey;
-  margin-bottom: 0;
-}
+// hr {
+//   border: 4px solid $darkGrey;
+//   margin-bottom: 0;
+// }
+// hr {
+//   border: 1px solid $darkGrey;
+//   margin-bottom: 0;
+// }
 .container { 
-  width: 1000px;
+  width: 940px;
   margin: 0 auto;
-  @include box_shadow
+  // @include box_shadow
 }
+
+.spacer {
+  border-bottom: 1px solid $outlineColor;
+  width: 100%;
+}
+
 iframe {
   display: block;
 }
 iframe.center {
   margin: 0 auto;
+}
+.bar {
+  background: $darkGrey;
+  width: 100%;
+}
+.bar.small {
+  height: 6px;
 }
 
 /* Form styling */
@@ -150,69 +176,69 @@ form {
 
 /* Header styles */
 .header {
-  background: $darkGrey;
-  padding: 15px 20px 10px;
   color: $lightGrey;
+  .logo, .colorLogo {
+    margin: 2px 0 10px 0px;
+    width: 412px;
+    height: 160px;
+    background: url(ben_logo_412x160.png);
+    background-repeat: no-repeat;
+  }
   .logo {
-    width: 415px;
+    background-position: 0px 0px;
+  }
+  .colorLogo {
+    background-position: 0px -157px;
+    opacity: 0;
+    @include transition(opacity);
+    &:hover {
+      opacity: 1;
+    }
   }
   a {
+    @include transition(color);
     color: $lightGrey;
     text-decoration: none;
+    &:hover {
+      color: $hoverBlue;
+    }
   }
   ul.menu {
     list-style-type: none;
-    padding-top: 120px;
+    margin-bottom: 0;
+    padding-bottom: 0;
     li {
-      display: inline;
-      margin-left: 20px;
+      display: inline-block;
+      padding: 10px;
+      border-top: 2px solid $offwhite;
+      @include transition(border);
+      &:hover {
+        border-top: 2px solid $darkGrey;
+      }
       a {
         font-size: 30px;
         font-weight: 500;
+        margin-top: 10px;
+        &:hover {
+          text-shadow: 1px 1px #FFF;
+        }
       }
     }
   }
-  .bars {
-    .bar {
-      background: $lightGrey;
-      height: 40px;
-      margin: 5px 0;
-    }
-    .top {
-      font-size: 25px;
-      font-weight: 200;
-      .bar {
-        width: 100px;
-      }
-    }
-    .middle {
-      .bar {
-        width: 150px;
-      }
-      .name {
-        font-size: 40px;
-      }
-      .name.dark {
-        color: $mediumGrey;
-      }
-    }
-    .bottom {
-      .bar {
-        width: 200px;
-      }
-      .company {
-        font-size: 30px;
-        letter-spacing: -1px;
-      }
-    }
-  }
+  .nav {
+    background: $offwhite;
+    // padding-top: 120px;
+    position: relative;
+    top: 120px;
+    display: block;
+    margin: 0;
+  } 
 }
 
 /* Content styles */
 .sectionTitle {
-  border-bottom: 10px solid $darkGrey;
   font-size: 30px;
-  padding: 10px 20px;
+  padding: 40px 0 20px;
 }
 .sectionTitle.noBorder {
   border: 0;
@@ -221,30 +247,47 @@ form {
   height: 300px;
 }
 .recentVideos {
-  padding: 20px;
+  margin-bottom: 20px;
   .left:first-child {
-    border-right: 1px solid $outlineColor;
-  }
-  iframe {
-    padding-left: 9px;
-    padding-right: 20px;
-  }
-  iframe.last {
-    padding-left: 20px;
-    padding-right: 0px;
+    margin-right: 20px;
   }
 }
 .demoReel {
-  background: $darkGrey;
-  padding: 0 20px;
+  padding: 20px 0;
+}
+.statement {
+  margin-bottom: 20px;
+  p {
+    margin: 40px 0 20px;
+    font-size: 42px;
+    font-weight: 700;
+    text-shadow: 2px 2px #FFF;
+  }
+  .view_work {
+    font-size: 25px;
+    a {
+      color: $lightGrey;
+      @include transition(color);
+      @include transition(border);
+      display: inline-block;
+      padding-top: 10px;
+      border-top: 2px solid $offwhite;
+      &:hover {
+        color: $hoverBlue;
+        text-decoration: none;
+        border-top: 2px solid $darkGrey;
+        text-shadow: 1px 1px #FFF;
+      }
+    }
+  }
 }
 .video {
-  padding: 20px; 
+  // padding: 20px; 
   .left {
     border-right: 1px solid $outlineColor;
   }
   iframe, .videoDescription{
-    margin: 0 20px 0 0;
+    margin: 0 0 0 0;
     border-bottom: 1px solid $outlineColor;
     padding: 20px 0;
   }
