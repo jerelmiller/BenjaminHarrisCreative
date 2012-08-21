@@ -101,7 +101,7 @@ body {
 //   margin-bottom: 0;
 // }
 .container { 
-  width: 940px;
+  width: 960px;
   margin: 0 auto;
   // @include box_shadow
 }
@@ -143,7 +143,7 @@ form {
   }
   label {
     display: block;
-    width: 200px;
+    width: 145px;
     text-align: right;
     margin: 0px 20px 0 0;
     float: left;
@@ -176,9 +176,11 @@ form {
 
 /* Header styles */
 .header {
+  border-left: 1px solid $outlineColor;
+  border-right: 1px solid $outlineColor;
   color: $lightGrey;
   .logo, .colorLogo {
-    margin: 2px 0 10px 0px;
+    margin: 10px 0 10px 10px;
     width: 412px;
     height: 160px;
     background: url(ben_logo_412x160.png);
@@ -188,6 +190,7 @@ form {
     background-position: 0px 0px;
   }
   .colorLogo {
+    margin: 2px 0 0;
     background-position: 0px -157px;
     opacity: 0;
     @include transition(opacity);
@@ -279,35 +282,30 @@ form {
     }
   }
 }
-.video {
-  // padding: 20px; 
-  .left {
-    border-right: 1px solid $outlineColor;
-  }
-  iframe, .videoDescription{
-    margin: 0 0 0 0;
-    border-bottom: 1px solid $outlineColor;
-    padding: 20px 0;
-  }
-  iframe:last-child, .videoDescription:last-child {
-    margin-bottom: 30px;
-  }
-  .videoDescription {
-    height: 281px;
-    width: 400px;
-    .descriptionTitle {
-      font-size: 25px;
-      text-align: right;
-      padding-bottom: 20px;
-      width: 84%;
-      float: right;
-      font-family: $secondary_font_family;
-      border-bottom: 1px solid $outlineColor;
+.videoContainer {
+  margin-top: 30px;
+  .video {
+    float: left;
+    margin-left: 20px;
+    iframe {
+      margin: 10px 0 ;
+      display: inline;
     }
   }
+  .video.firstInRow {
+    margin-left: 0;
+  }
+  .descriptionTitle {
+    font-family: $secondary_font_family;
+    border-left: 2px solid $darkGrey;
+    width: 296px;
+    margin-bottom: 40px;
+    padding-left: 8px;
+  }
+  // }
 }
 .contactForm {
-  padding: 20px;
+  padding: 20px 0;
 }
 .blog {
   padding: 20px;
@@ -338,9 +336,7 @@ form {
     }
   }
   .social a {
-    &:hover {
-      border-bottom: 0
-    }
+    border: 0;
   }
   .contact, .friends {
     margin-right: 50px;

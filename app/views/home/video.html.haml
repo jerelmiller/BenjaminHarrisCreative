@@ -1,31 +1,23 @@
-.sectionTitle
-  video
-.video
-  .left
-    %iframe{src: "http://player.vimeo.com/video/23220210", width: "500", height: "281", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
-    %iframe{src: "http://player.vimeo.com/video/32883090", width: "500", height: "281", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
-    %iframe{src: "http://player.vimeo.com/video/27652652", width: "500", height: "281", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
-    %iframe{src: "http://player.vimeo.com/video/23218540", width: "500", height: "281", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
-    %iframe{src: "http://player.vimeo.com/video/26278360", width: "500", height: "281", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
-  .right
-    .videoDescription
+.container
+  .videoContainer
+    .video.firstInRow
+      %iframe{src: add_vimeo_params("http://player.vimeo.com/video/23220210"), width: "306", height: "171", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
       .descriptionTitle
         My Converse
-      .description
-    .videoDescription
+    .video
+      %iframe{src: add_vimeo_params("http://player.vimeo.com/video/32883090"), width: "306", height: "171", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
       .descriptionTitle
         That Christmas Feeling
-      .description
-    .videoDescription
+    .video
+      %iframe{src: add_vimeo_params("http://player.vimeo.com/video/27652652"), width: "306", height: "171", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
       .descriptionTitle
         Behind The Mic: The Art of Voice Acting
-      .description
-    .videoDescription
+    .video.firstInRow
+      %iframe{src: add_vimeo_params("http://player.vimeo.com/video/23218540"), width: "306", height: "171", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
       .descriptionTitle
         Coke: The Filmmakers Fuel
-      .description
-    .videoDescription
+    .video
+      %iframe{src: add_vimeo_params("http://player.vimeo.com/video/26278360"), width: "306", height: "171", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
       .descriptionTitle
         Once More Into The Breech
-      .description    
-  .clear
+    .clear
