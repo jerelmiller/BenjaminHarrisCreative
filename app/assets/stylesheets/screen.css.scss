@@ -123,10 +123,10 @@ iframe.center {
 
 /* Form styling */
 form {
-  input[type=text], textarea {
+  input[type=text], input[type=password], textarea {
     padding: 10px;
     font-size: 16px;
-    width: 300px;
+    width: 200px;
     @include border_radius(2px);
     border: 1px solid #AAA;
   }
@@ -136,6 +136,9 @@ form {
   }
   .input {
     margin-bottom: 10px;
+  }
+  .submit {
+    margin-left: 165px;
   }
   label {
     display: block;

@@ -1,0 +1,108 @@
+$lightGrey: #97999D;
+$mediumGrey: #595B5D;
+$darkGrey: #2F2F2F;
+$offwhite: #EFEFEF;
+$hoverBlue: #88A1B7;
+$outlineColor: #BBB;
+$secondary_font_family: Futura, Helvetica;
+
+/* Mixins */
+@mixin box_shadow($xOffset: 0, $yOffset: 0, $blur: 15px, $color: #222) {
+  -webkit-box-shadow: $xOffset $yOffset $blur $color;
+  -moz-box-shadow: $xOffset $yOffset $blur $color;
+  box-shadow: $xOffset $yOffset $blur $color;
+}
+
+@mixin border_radius($radius: 2px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin transition($element, $time: 0.5s) {
+  -webkit-transition: $element $time;
+  -moz-transition: $element $time;
+  -ms-transition: $element $time;
+  -o-transition: $element $time;
+  transition: $element $time;
+}
+
+/* Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body.admin {
+  .header {
+    background: $darkGrey;
+    .logo {
+      width: 330px;
+      height: 129px;
+      background: url(ben_logo_330x129.png);
+    }
+    .colorLogo {
+      background: 0;
+    }
+    .right {
+      margin-top: 70px;
+      font-size: 50px;
+      margin-right: 150px;
+    }
+  }
+  .formContainer {
+    padding: 20px;
+    background: white;
+    border: 1px solid #DDD;
+    margin-top: 20px;
+    @include border_radius(2px);
+    .formHeader {
+      font-size: 30px;
+      text-align: center;
+      border-bottom: 1px solid #DDD;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
