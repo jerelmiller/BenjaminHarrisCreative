@@ -1,0 +1,22 @@
+!!! XML
+!!!
+%html{ :'xml:lang' => "en", :lang => "en" }
+  %head
+    %title
+      = "Admin - #{yield(:title)}"
+
+    %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
+    = stylesheet_link_tag 'application', :media => 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tag
+
+  %body.admin
+    .wrapper
+      = render 'layouts/admin_header'
+      .spacer
+      .content
+        .container
+          = yield
+      .push
+      .clear
+    = render 'layouts/admin_footer'

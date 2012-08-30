@@ -4,6 +4,7 @@ $darkGrey: #2F2F2F;
 $offwhite: #EFEFEF;
 $hoverBlue: #88A1B7;
 $outlineColor: #BBB;
+$mediumDarkText: #888;
 $secondary_font_family: Futura, Helvetica;
 
 /* Mixins */
@@ -73,16 +74,50 @@ table {
   border-spacing: 0;
 }
 
+i {
+  position: relative;
+  top: 2px;
+}
+
 body.admin {
+  form {
+    label {
+      width: 200px;
+      font-size: 17px;
+      margin-top: 9px;
+    }
+    .submit {
+      margin-left: 220px;
+    }
+  }
   .header {
     background: $darkGrey;
+    height: 83px;
+    color: $mediumDarkText;
+    a {
+      @include transition(none, 0);
+    }
     .logo {
-      width: 330px;
-      height: 129px;
-      background: url(ben_logo_330x129.png);
+      width: 163px;
+      height: 64px;
+      background: url(ben_logo_163x64.png);
     }
     .colorLogo {
       background: 0;
+    }
+    .nav {
+      top: 25px;
+      background: 0;
+      .dropdown-toggle {
+        font-size: 20px;
+      }
+      .dropdown-menu a {
+        @include transition(none, 0);
+        color: #333;
+        &:hover {
+          color: white;
+        }
+      }
     }
     .right {
       margin-top: 70px;
@@ -90,11 +125,13 @@ body.admin {
       margin-right: 150px;
     }
   }
+  .content {
+    margin: 20px 0;
+  }
   .formContainer {
     padding: 20px;
     background: white;
     border: 1px solid #DDD;
-    margin-top: 20px;
     @include border_radius(2px);
     .formHeader {
       font-size: 30px;
@@ -103,6 +140,17 @@ body.admin {
       padding-bottom: 20px;
       margin-bottom: 20px;
     }
+  }
+  .push {
+    height: 50px;
+  }
+  .footer {
+    background: $darkGrey;
+    height: 30px;
+    margin-top: -50px;
+    text-align: center;
+    font-size: 12px;
+    color: $mediumDarkText;
   }
 }
 

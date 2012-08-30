@@ -1,0 +1,18 @@
+= form_for [:admin, @user] do |f|
+  .input
+    %label Email
+    = f.text_field :email
+  .input
+    %label First Name
+    = f.text_field :first_name
+  .input
+    %label Last Name
+    = f.text_field :last_name
+  .input
+    %label Password
+    = f.password_field :password
+  .input
+    %label Password Confirmation
+    = f.password_field :password_confirmation
+  .submit
+    = f.submit 'Update', class: 'btn btn-primary btn-large'
