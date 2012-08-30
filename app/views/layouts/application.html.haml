@@ -11,7 +11,10 @@
     = csrf_meta_tag
 
   %body
-    = render 'layouts/header'
-    .spacer
-    = yield
+    .wrapper
+      = render 'layouts/header'
+      .spacer
+      = yield
+      .push
+      .clear
     = render 'layouts/footer'

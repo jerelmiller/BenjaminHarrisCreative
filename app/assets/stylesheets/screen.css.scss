@@ -73,6 +73,10 @@ table {
   border-spacing: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 
 
 /* General Styles */
@@ -321,9 +325,12 @@ form {
 
 /* Footer Styles */
 .footer {
+  margin-top: -166px;
+  height: 146px;
   color: $offwhite;
   background: $darkGrey;
   padding-top: 20px;
+  clear: both;
   a {
     color: $lightGrey;
     border-bottom: 2px solid $darkGrey;
@@ -373,4 +380,12 @@ form {
     text-align: center;
     color: $lightGrey;
   }
+}
+
+.push {
+  clear: both;
+  height: 166px;
+}
+.wrapper {
+  min-height: 100%;
 }
