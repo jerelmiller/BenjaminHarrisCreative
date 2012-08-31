@@ -1,4 +1,5 @@
-= form_for [:admin, @user] do |f|
+= form_for [:admin, @user], url: { action: 'update' } do |f|
+  = render 'layouts/flash', flash: flash
   .input
     %label Email
     = f.text_field :email

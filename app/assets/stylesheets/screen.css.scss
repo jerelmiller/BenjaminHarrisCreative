@@ -57,7 +57,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
 }
-ol, ul {
+ul {
   list-style: none;
 }
 blockquote, q {
@@ -84,6 +84,13 @@ body {
   background: $offwhite;
   font-family: 'Helvetica Neue', serif
 }
+ol {
+  margin: 0 0 20px 20px;
+  padding-left: 20px;
+  li {
+    margin-bottom: 5px;
+  }
+}
 .left {
   float: left;
 }
@@ -99,7 +106,6 @@ body {
 .container { 
   width: 960px;
   margin: 0 auto;
-  // @include box_shadow
 }
 
 .spacer {
@@ -165,6 +171,9 @@ form {
 }
 .marginTop5 {
   margin-top: 5px;
+}
+.marginTop20 {
+  margin-top: 20px;
 }
 .marginRight10 {
   margin-right: 10px;
@@ -263,22 +272,60 @@ form {
     font-weight: 700;
     text-shadow: 2px 2px #FFF;
   }
-  .viewWork {
-    font-size: 25px;
-    a {
-      color: $lightGrey;
-      @include transition(color);
-      @include transition(border);
-      display: inline-block;
-      padding-top: 10px;
-      border-top: 2px solid $offwhite;
-      text-shadow: 1px 1px #FFF;
-      &:hover {
-        color: $hoverBlue;
-        text-decoration: none;
-        border-top: 2px solid $darkGrey;
-      }
+}
+.viewWork, .readMore {
+  font-size: 25px;
+  a {
+    color: $lightGrey;
+    @include transition(color);
+    @include transition(border);
+    display: inline-block;
+    padding-top: 10px;
+    border-top: 2px solid $offwhite;
+    text-shadow: 1px 1px #FFF;
+    &:hover {
+      color: $hoverBlue;
+      text-decoration: none;
+      border-top: 2px solid $darkGrey;
     }
+  }
+}
+.blog {
+  padding: 20px 0;
+  border-bottom: 1px solid $outlineColor;
+  margin-bottom: 20px;
+}
+.blog.noBorder {
+  border-bottom: 0;
+}
+.blogTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.createdAt {
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  color: #888;
+}
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 20px;
+}
+p.small {
+  font-size: 14px;
+}
+.img.left {
+  margin: 0 20px 10px 0;
+}
+.img.right {
+  margin: 0 0 10px 20px;
+}
+.recentBlog {
+  padding: 20px 0;
+  .readMore {
+    margin-top: 20px;
   }
 }
 .videoContainer {
@@ -301,16 +348,21 @@ form {
     margin-bottom: 40px;
     padding-left: 8px;
   }
-  // }
+}
+.clients {
+  margin-bottom: 20px;
+  .client {
+    font-size: 20px;
+    margin: 0 10px 10px;
+  }
+  .other {
+    margin: 20px 0;
+    font-size: 25px;
+    text-shadow: 1px 1px #FFF;
+  }
 }
 .contactForm {
   padding: 20px 0;
-}
-.blog {
-  padding: 20px;
-  font-size: 50px;
-  text-align: center;
-  margin-top: 20px;
 }
 .social {
   margin-top: 20px;

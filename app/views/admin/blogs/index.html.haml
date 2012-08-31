@@ -1,0 +1,5 @@
+= render 'layouts/flash', flash: flash
+= link_to 'Create a New Blog', new_admin_blog_path, class: 'btn btn-primary btn-large'
+
+.blogList
+  = render @blogs

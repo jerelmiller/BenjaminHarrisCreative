@@ -1,0 +1,7 @@
+= link_to 'Back to blogs', admin_blogs_path, class: 'btn btn-primary btn-large'
+.blog.noBorder
+  .blogTitle= @blog.title
+  .createdAt= @blog.created_at.strftime('%B %-d, %Y')
+  .blogBody= @blog.body.html_safe
+  = link_to 'Edit Blog', edit_admin_blog_path(@blog), class: 'btn btn-primary btn-large'
+  .clear

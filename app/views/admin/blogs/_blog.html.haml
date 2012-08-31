@@ -1,0 +1,7 @@
+.blog
+  .blogTitle= link_to blog.title, admin_blog_path(blog)
+  .createdAt= blog.created_at.strftime('%B %-d, %Y')
+  .blogBody= simple_format truncate(blog.body, :length => 500)
+  .clear
+  = link_to 'Edit Blog', edit_admin_blog_path(blog), class: 'btn btn-primary btn-large'
+  .clear

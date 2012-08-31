@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   layout 'admin'
+  
   def create
     user = login(params[:email], params[:password], false)
     if user

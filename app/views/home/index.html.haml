@@ -3,7 +3,7 @@
 
 .demoReel
   .container
-    %iframe{ src: add_vimeo_params("http://player.vimeo.com/video/47149681"), width: "960", height: "539", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true }
+    %iframe{ src: add_vimeo_params("http://player.vimeo.com/video/47907929"), width: "960", height: "539", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true }
 .spacer
 .sectionTitle
   .container featuredWORK
@@ -19,3 +19,28 @@
       %br
       AND BUSINESS IS GOOD
     %span.viewWork= link_to 'viewVIDEOS', video_path
+.spacer
+.sectionTitle
+  .container recentBLOGS
+.recentBlog
+  .container
+    .blogTitle= @blog.title
+    .createdAt= @blog.created_at.strftime('%B %-d, %Y')
+    = simple_format truncate(@blog.body, length: 600)
+    .clear
+    %p
+      %span.readMore= link_to 'readMore', blog_show_path(@blog)
+.spacer
+.sectionTitle
+  .container clients
+.clients
+  .container
+    .client.left= image_tag 'huhot_logo.png'
+    .client.left= image_tag 'Marriott.png'
+    .client.left= image_tag 'fizik.png'
+    .client.left= image_tag 'you_can_play.png'
+    .clear
+    .other otherCLIENTS
+    %li.client Science Matters
+    %li.client City of Denver
+    %li.client The Center

@@ -1,0 +1,7 @@
+.container
+  .marginTop20
+    = link_to 'Back to blogs', blog_path, class: 'btn btn-primary btn-large'
+  .blog.noBorder
+    .blogTitle= @blog.title
+    .createdAt= @blog.created_at.strftime('%B %-d, %Y')
+    .blogBody= @blog.body.html_safe

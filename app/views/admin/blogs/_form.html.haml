@@ -1,0 +1,10 @@
+= form_for [:admin, @blog] do |f|
+  = render 'layouts/flash', flash: flash
+  .input
+    %label Title
+    = f.text_field :title
+  .input
+    %label Body
+    = f.text_area :body
+  .submit
+    = f.submit "#{submit_text} Blog", class: 'btn btn-primary btn-large'

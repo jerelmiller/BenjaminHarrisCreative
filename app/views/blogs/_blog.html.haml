@@ -1,0 +1,5 @@
+.blog
+  .blogTitle= link_to blog.title, blog_show_path(blog)
+  .createdAt= blog.created_at.strftime('%B %-d, %Y')
+  .blogBody= simple_format truncate(blog.body, :length => 500)
+  .clear

@@ -58,7 +58,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
 }
-ol, ul {
+ul {
   list-style: none;
 }
 blockquote, q {
@@ -108,6 +108,12 @@ body.admin {
     .nav {
       top: 25px;
       background: 0;
+      li.link {
+        font-size: 20px;
+        margin-right: 20px;
+        padding-right: 20px;
+        border-right: 1px solid #555;
+      }
       .dropdown-toggle {
         font-size: 20px;
       }
@@ -128,6 +134,13 @@ body.admin {
   .content {
     margin: 20px 0;
   }
+  .centerText {
+    text-align: center;
+  }
+  .largeText {
+    font-size: 40px;
+    margin-top: 20px;
+  }
   .formContainer {
     padding: 20px;
     background: white;
@@ -139,6 +152,21 @@ body.admin {
       border-bottom: 1px solid #DDD;
       padding-bottom: 20px;
       margin-bottom: 20px;
+    }
+  }
+  .formContainer.largeForm {
+    label {
+      width: 100px;
+    }
+    input[type=text] {
+      width: 400px;
+    }
+    textarea {
+      height: 300px;
+      width: 700px;
+    }
+    .submit {
+      margin-left: 120px;
     }
   }
   .push {
