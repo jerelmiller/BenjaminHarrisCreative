@@ -1,3 +1,6 @@
+- content_for :title do
+  = @blog.title
+
 .container
   .marginTop20
     = link_to 'Back to blogs', blog_path, class: 'btn btn-primary btn-large'

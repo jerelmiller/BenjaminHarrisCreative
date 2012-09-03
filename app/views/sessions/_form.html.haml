@@ -1,4 +1,5 @@
 = form_tag sessions_path do
+  = render 'layouts/flash', flash: flash
   .input
     = label_tag :email
     = text_field_tag :email

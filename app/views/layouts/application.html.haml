@@ -3,7 +3,10 @@
 %html{ :'xml:lang' => "en", :lang => "en" }
   %head
     %title
-      = yield(:title) || "Benjamin Harris Creative"
+      - if content_for? :title
+        = "Benjamin Harris Creative - #{yield :title}"
+      - else
+        Benjamin Harris Creative
 
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}/
     = stylesheet_link_tag 'application', :media => 'all'

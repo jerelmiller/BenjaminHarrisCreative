@@ -2,7 +2,7 @@ class Admin::BlogsController < Admin::AdminController
   before_filter :get_referer, :only => [:edit]
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.order(:created_at).all
   end
 
   def show
@@ -39,12 +39,12 @@ class Admin::BlogsController < Admin::AdminController
     end
   end
 
-  def destroy
-    @blog = Blog.find(params[:id])
-    @blog.destroy
+  # def destroy
+  #   @blog = Blog.find(params[:id])
+  #   @blog.destroy
 
-    redirect_to blogs_url
-  end
+  #   redirect_to blogs_url
+  # end
 
   private
 

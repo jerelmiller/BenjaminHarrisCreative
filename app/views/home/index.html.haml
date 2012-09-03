@@ -1,5 +1,4 @@
-- content_for :title do
-  Benjamin Harris Creative
+
 
 .demoReel
   .container
@@ -24,12 +23,15 @@
   .container recentBLOGS
 .recentBlog
   .container
-    .blogTitle= @blog.title
-    .createdAt= @blog.created_at.strftime('%B %-d, %Y')
-    = simple_format truncate(@blog.body, length: 600)
-    .clear
-    %p
-      %span.readMore= link_to 'readMore', blog_show_path(@blog)
+    - if @blog
+      .blogTitle= @blog.title
+      .createdAt= @blog.created_at.strftime('%B %-d, %Y')
+      = simple_format truncate(@blog.body, length: 600)
+      .clear
+      %p
+        %span.readMore= link_to 'readMore', blog_show_path(@blog)
+    - else
+      .blogTitle No Recent Blogs
 .spacer
 .sectionTitle
   .container clients

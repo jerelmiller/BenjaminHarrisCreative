@@ -1,3 +1,6 @@
+- content_for :title do
+  Blog
+
 = render 'layouts/flash', flash: flash
 = link_to 'Create a New Blog', new_admin_blog_path, class: 'btn btn-primary btn-large'
 

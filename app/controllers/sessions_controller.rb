@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   layout 'admin'
+  before_filter :check_current_user, :only => :new
   
   def create
     user = login(params[:email], params[:password], false)
@@ -15,4 +16,10 @@ class SessionsController < ApplicationController
     logout
     redirect_to root_path
   end
+
+  private
+
+    def check_current_user
+      redirect_to admin_root_path if current_user
+    end
 end

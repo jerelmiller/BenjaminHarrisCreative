@@ -71,7 +71,7 @@ BenHarrisCreative::Application.configure do
     :port => 25,
     :domain => "benjaminharriscreative.com",
     :authentication => :login,
-    :user_name => "jerel@benjaminharriscreative.com",
-    :password => "j3r3l"
+    :user_name => "notifier@benjaminharriscreative.com",
+    :password => "i4?3!4K8_%Tu"
   }
 end
