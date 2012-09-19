@@ -1,0 +1,7 @@
+= form_for [:admin, @video] do |f|
+  = render 'layouts/flash', flash: flash
+  .input
+    %label Vimeo URL
+    = text_field_tag :video_url
+  .submit
+    = f.submit "Add Video", class: 'btn btn-primary btn-large'

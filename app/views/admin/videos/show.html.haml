@@ -1,0 +1,12 @@
+- content_for :title do
+  = @video.title
+
+= link_to 'Back to videos', admin_videos_path, class: 'btn btn-primary btn-large'
+= link_to 'Refresh info from Vimeo', refresh_admin_video_path, class: 'btn btn-primary btn-large'
+
+.videoTitle
+  = @video.title
+.videoPlayer
+  = raw @video.embed_code
+.videoDescription
+  = simple_format @video.description

@@ -1,0 +1,5 @@
+.video.left{class: "#{cycle('', '', 'last')}"}
+  .videoThumbnail  
+    = link_to image_tag(video.thumbnail_url, width: 306), admin_video_path(video)
+  .title
+    = video.title

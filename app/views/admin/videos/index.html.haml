@@ -1,0 +1,9 @@
+- content_for :title do
+  Videos
+
+= render 'layouts/flash', flash: flash
+= link_to 'Add a new video', new_admin_video_path, class: 'btn btn-primary btn-large'
+= link_to 'Edit videos', update_videos_admin_videos_path, class: 'btn btn-primary btn-large'
+
+.videos
+  = render @videos

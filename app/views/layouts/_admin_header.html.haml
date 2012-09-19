@@ -5,6 +5,7 @@
     - if current_user   
       .navbar.pull-right
         %ul.nav
+          %li.link= link_to 'Videos', admin_videos_path
           %li.link= link_to 'Blog', admin_blogs_path
           %li.dropdown
             = link_to '#', class: 'dropdown-toggle', 'data-toggle' => 'dropdown' do

@@ -5,6 +5,7 @@ BenHarrisCreative::Application.routes.draw do
   get 'logout' => 'sessions#destroy'
 
   resources :sessions, :only => :create
+  resources :videos, :only => :index
 
   root :to => 'home#index'
   match 'blog' => 'blogs#index'
@@ -16,7 +17,11 @@ BenHarrisCreative::Application.routes.draw do
   namespace :admin do
     resource :users, :only => [:edit, :update]
     resources :blogs
-    resources :videos
+    resources :videos do
+      get :refresh, :on => :member
+      get :update_videos, :on => :collection
+      put :update_all, :on => :collection
+    end
     root :to => 'admin#index'
   end
 end

@@ -168,6 +168,55 @@ body.admin {
     .submit {
       margin-left: 120px;
     }
+    .submit.marginLeft10 {
+      margin-left: 10px;
+    }
+  }
+  .videos {
+    margin: 20px 0;
+    .video {
+      margin: 0 20px 20px 0;
+      .videoThumbnail {
+        height: 171px;
+        overflow: hidden;
+      }
+      .title {
+        max-width: 295px;
+        padding-left: 10px;
+        margin-top: 5px;
+        border-left: 2px solid $darkGrey;
+      }
+    }
+    .video.last {
+      margin-right: 0
+    }
+  }
+  .videoTitle {
+    font-size: 30px;
+    text-shadow: 1px 1px #FFF;
+    margin: 20px 0; 
+  }
+  .videoDescription {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  table.videos {
+    td {
+      padding: 5px 10px;
+      border-right: 1px solid $outlineColor;
+      font-size: 13px;
+    }
+    td:last-child {
+      border-right: 0;
+    }
+    td.tableHeader {
+      border-bottom: 1px solid $outlineColor;
+      padding-bottom: 10px;
+      span.text {
+        font-weight: bold;
+        font-size: 16px;
+      }
+    }
   }
   .push {
     height: 50px;

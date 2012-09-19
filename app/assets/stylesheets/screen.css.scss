@@ -333,10 +333,14 @@ p.small {
   .video {
     float: left;
     margin-left: 20px;
-    iframe {
-      margin: 10px 0 ;
-      display: inline;
+    .videoThumbnail {
+      height: 171px;
+      overflow: hidden;
     }
+    // iframe {
+    //   margin: 10px 0 ;
+    //   display: inline;
+    // }
   }
   .video.firstInRow {
     margin-left: 0;
@@ -346,6 +350,7 @@ p.small {
     border-left: 2px solid $darkGrey;
     width: 296px;
     margin-bottom: 40px;
+    margin-top: 5px;
     padding-left: 8px;
   }
 }
