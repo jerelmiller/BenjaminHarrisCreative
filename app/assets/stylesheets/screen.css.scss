@@ -255,14 +255,27 @@ form {
 .recentBlogs {
   height: 300px;
 }
+.videoTitle {
+  font-family: $secondary_font_family;
+  border-left: 2px solid $darkGrey;
+  margin-top: 10px;
+  padding-left: 8px;
+}
 .recentVideos {
   margin-bottom: 20px;
-  .left:first-child {
+  .left:nth-child(odd) {
     margin-right: 20px;
   }
+  .videoTitle {
+    margin-bottom: 20px;
+  }
 }
-.demoReel {
-  padding: 20px 0;
+.mainVideo {
+  padding: 30px 0;
+  .videoTitle {
+    font-size: 20px;
+    border-left: 3px solid $darkGrey;
+  }
 }
 .statement {
   margin-bottom: 20px;
@@ -345,13 +358,9 @@ p.small {
   .video.firstInRow {
     margin-left: 0;
   }
-  .descriptionTitle {
-    font-family: $secondary_font_family;
-    border-left: 2px solid $darkGrey;
+  .videoTitle {
     width: 296px;
     margin-bottom: 40px;
-    margin-top: 5px;
-    padding-left: 8px;
   }
 }
 .clients {

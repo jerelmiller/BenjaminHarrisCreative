@@ -58,6 +58,7 @@ class Admin::VideosController < Admin::AdminController
   end
 
   def update_all
+    Video.update_all(main_flag: false)
     Video.update(params[:videos].keys, params[:videos].values)
 
     flash[:success] = "Your videos have been successfully updated."
