@@ -1,10 +1,6 @@
-
-
 .mainVideo
   .container
-    / %iframe{ src: add_vimeo_params("http://player.vimeo.com/video/47907929"), width: "960", height: "539", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true }
-    / = image_tag @main_video['thumbnail_url'], width: 960, height: 539
-    = image_tag @main_video.thumbnail_url, width: 960, height: 539
+    = link_to image_tag(@main_video.thumbnail_url, width: 960, height: 539), @main_video.player_url, class: 'fancybox', 'data-width' => @main_video.width, 'data-height' => @main_video.height, 'data-title' => @main_video.title
     .videoTitle= @main_video.title
 .spacer
 .sectionTitle
@@ -13,12 +9,8 @@
   .container
     - @featured_videos.each do |video|
       .left
-        = image_tag video.thumbnail_url, width: 470, height: 262
+        = link_to image_tag(video.thumbnail_url, width: 470, height: 262), video.player_url, class: 'fancybox', 'data-width' => video.width, 'data-height' => video.height, 'data-title' => video.title
         .videoTitle= video.title
-    / %iframe.left{src: add_vimeo_params("http://player.vimeo.com/video/23220210"), width: "470", height: "262", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
-    / .left= image_tag @featured_video1['thumbnail_url'], width: 470, height: 262
-    / %iframe.left.last{src: add_vimeo_params("http://player.vimeo.com/video/32883090"), width: "470", height: "262", frameborder: "0", webkitAllowFullScreen: true, mozallowfullscreen: true, allowFullScreen: true}
-    / .left= image_tag @featured_video2['thumbnail_url'], width: 470, height: 262
 .spacer
 .statement
   .container

@@ -1,4 +1,6 @@
 class Admin::VideosController < Admin::AdminController
+  require 'cgi'
+
   def index
     @videos = Video.all
   end
@@ -20,14 +22,16 @@ class Admin::VideosController < Admin::AdminController
       flash[:error] = "Sorry. Something went wrong while trying to grab the video info. Please try again."
       render :new
     when 200
-      @video = Video.new
       @video.vimeo_id = video_info['video_id']
       @video.title = video_info['title']
       @video.description = video_info['description']
       @video.video_url = video_url
       @video.thumbnail_url = video_info['thumbnail_url']
       @video.embed_code = video_info['html']
+      @video.player_url = extract_player_url(video_info['html'])
       @video.duration = video_info['duration']
+      @video.width = video_info['width']
+      @video.height = video_info['height']
 
       if @video.save
         flash[:success] = 'Your video has been successfully saved.'
@@ -77,7 +81,10 @@ class Admin::VideosController < Admin::AdminController
       @video.description = video_info['description']
       @video.thumbnail_url = video_info['thumbnail_url']
       @video.embed_code = video_info['html']
+      @video.player_url = extract_player_url(video_info['html'])
       @video.duration = video_info['duration']
+      @video.width = video_info['width']
+      @video.height = video_info['height']
 
       if @video.save
         flash[:success] = 'Your video has been successfully saved.'
@@ -87,4 +94,14 @@ class Admin::VideosController < Admin::AdminController
     end
     redirect_to admin_video_path(@video)
   end
+
+  private
+
+    def extract_player_url(url)
+      CGI.unescapeHTML add_autoplay_param(url.scan(/(src=")(http:\/\/[a-z\/\.0-9\?=&;^\s]+)(")/).flatten.second)
+    end
+
+    def add_autoplay_param(base_url)
+      "#{base_url}&" + { autoplay: true }.to_query
+    end
 end

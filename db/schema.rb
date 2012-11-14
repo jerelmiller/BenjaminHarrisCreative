@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120919041659) do
+ActiveRecord::Schema.define(:version => 20121114064454) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -51,6 +51,9 @@ ActiveRecord::Schema.define(:version => 20120919041659) do
     t.boolean  "main_flag",     :default => false
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false
+    t.string   "player_url"
+    t.integer  "width"
+    t.integer  "height"
   end
 
 end
