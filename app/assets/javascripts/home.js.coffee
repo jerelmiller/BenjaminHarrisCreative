@@ -1,8 +1,8 @@
 $ ->
   $('.fancybox').hover ->
-    $(this).find('img').fadeTo(250, 0.2)
+    $(this).find('img').fadeTo(100, 0.2)
   , ->
-    $(this).find('img').fadeTo(250, 1)
+    $(this).find('img').fadeTo(100, 1)
 
   $('.fancybox').each ->
     $this = $(this)

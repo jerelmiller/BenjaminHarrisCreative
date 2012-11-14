@@ -9,7 +9,6 @@ BenHarrisCreative::Application.routes.draw do
 
   root :to => 'home#index'
   match 'blog' => 'blogs#index'
-  match 'video' => 'home#video'
   match 'clients' => 'home#clients'
 
   resources :blogs, :only => :show, :as => 'blog_show'

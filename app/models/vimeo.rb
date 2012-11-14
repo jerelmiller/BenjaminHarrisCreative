@@ -1,5 +1,5 @@
 class Vimeo
-
+  require 'httparty'
   def self.get_video_info(url, options = {})
     HTTParty.get("http://vimeo.com/api/oembed.json?" + { url: url, 
                                                          width: options[:width], 
