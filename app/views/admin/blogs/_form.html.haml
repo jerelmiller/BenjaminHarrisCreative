@@ -2,7 +2,7 @@
   = render 'layouts/flash', flash: flash
   .input
     %label Title
-    = f.text_field :title
+    = f.text_field :title, class: 'title'
   .input
     %label Body
     = f.text_area :body

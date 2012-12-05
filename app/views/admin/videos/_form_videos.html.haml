@@ -2,17 +2,20 @@
   = render 'layouts/flash', flash: flash
   %table.videos
     %tr
-      %td.tableHeader{width: 300} 
+      %td.tableHeader{width: 300}
         %span.text Video Title
-      %td.tableHeader{width: 150} 
+      %td.tableHeader{width: 120}
         %span.text Display on site?
         %i.icon-question-sign.bootstrapTooltip{rel: 'tooltip', 'data-title' => 'Check this to display the video on the site'}
-      %td.tableHeader{width: 150} 
+      %td.tableHeader{width: 120}
         %span.text Featured Video?
         %i.icon-question-sign.bootstrapTooltip{rel: 'tooltip', 'data-title' => 'Check this to feature the video on the main page'}
       %td.tableHeader 
         %span.text Main Video?
         %i.icon-question-sign.bootstrapTooltip{rel: 'tooltip', 'data-title' => 'Check this to make the video the main video on the homepage'}
+      %td.tableHeader
+        %span.text Custom URL
+        %i.icon-question-sign.bootstrapTooltip{rel: 'tooltip', 'data-title' => 'The public url where this video will be displayed'}
       %td.tableHeader &nbsp;
     - @videos.each do |video|
       = fields_for 'videos[]', video do |f|
@@ -21,6 +24,7 @@
           %td= f.check_box :display_flag
           %td= f.check_box :featured_flag
           %td= f.radio_button :main_flag, 'true', class: 'mainRadioButton'
+          %td= f.text_field :user_video_url, size: 10, style: 'width:100px;'
           %td= link_to 'Delete', admin_video_path(video), method: :delete, data: { confirm: 'Are you sure you want to delete this video?' }
   .submit.marginLeft10
     = submit_tag "Update", class: 'btn btn-primary btn-large'

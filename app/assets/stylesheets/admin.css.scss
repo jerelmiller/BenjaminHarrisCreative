@@ -171,6 +171,22 @@ body.admin {
     .submit.marginLeft10 {
       margin-left: 10px;
     }
+    &.videoForm {
+      label {
+        width: 200px;
+        &.urlLabel {
+          font-size: 89%;
+        }
+      }
+      input[type=checkbox] {
+        position: relative;
+        top: 8px;
+        margin-bottom: 20px;
+      }
+      .submit {
+        margin-left: 220px;
+      }
+    }
   }
   .videos {
     margin: 20px 0;

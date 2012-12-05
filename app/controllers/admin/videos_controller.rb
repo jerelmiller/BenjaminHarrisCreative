@@ -10,8 +10,8 @@ class Admin::VideosController < Admin::AdminController
   end
 
   def create
-    video_url = params[:video_url]
-    video_info = Vimeo.get_video_info(video_url, width: 960)
+    vimeo_url = params[:vimeo_url]
+    video_info = Vimeo.get_video_info(vimeo_url, width: 960)
     @video = Video.new
 
     case video_info.code
@@ -25,7 +25,8 @@ class Admin::VideosController < Admin::AdminController
       @video.vimeo_id = video_info['video_id']
       @video.title = video_info['title']
       @video.description = video_info['description']
-      @video.video_url = video_url
+      @video.vimeo_url = vimeo_url
+      @video.user_video_url = params[:user_video_url]
       @video.thumbnail_url = video_info['thumbnail_url']
       @video.embed_code = video_info['html']
       @video.player_url = extract_player_url(video_info['html'])
@@ -71,7 +72,7 @@ class Admin::VideosController < Admin::AdminController
 
   def refresh
     @video = Video.find(params[:id])
-    video_info = Vimeo.get_video_info(@video.video_url, width: 960)
+    video_info = Vimeo.get_video_info(@video.vimeo_url, width: 960)
 
     case video_info.code
     when 500...600

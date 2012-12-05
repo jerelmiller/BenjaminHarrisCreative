@@ -23,4 +23,6 @@ BenHarrisCreative::Application.routes.draw do
     end
     root :to => 'admin#index'
   end
+
+  resources :videos, :path => '/', :only => :show
 end

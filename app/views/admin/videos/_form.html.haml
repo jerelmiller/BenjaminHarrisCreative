@@ -2,6 +2,14 @@
   = render 'layouts/flash', flash: flash
   .input
     %label Vimeo URL
-    = text_field_tag :video_url
+    = text_field_tag :vimeo_url
+  .input
+    %label Add a custom URL
+    = check_box_tag :add_video_url, '1', false, class: 'toggleVideoInfo'
+  .clear
+  .videoInfo.hide
+    .input
+      %label.urlLabel= "http://#{request.host}/"
+      = text_field_tag :user_video_url, '', disabled: true
   .submit
     = f.submit "Add Video", class: 'btn btn-primary btn-large'

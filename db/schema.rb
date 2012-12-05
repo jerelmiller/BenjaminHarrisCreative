@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121114064454) do
+ActiveRecord::Schema.define(:version => 20121205055751) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -39,21 +39,22 @@ ActiveRecord::Schema.define(:version => 20121114064454) do
   end
 
   create_table "videos", :force => true do |t|
-    t.integer  "vimeo_id",                         :null => false
+    t.integer  "vimeo_id",                          :null => false
     t.string   "title"
     t.text     "description"
-    t.string   "video_url"
+    t.string   "vimeo_url"
     t.string   "thumbnail_url"
     t.text     "embed_code"
-    t.integer  "duration",      :default => 0
-    t.boolean  "display_flag",  :default => true
-    t.boolean  "featured_flag", :default => false
-    t.boolean  "main_flag",     :default => false
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.integer  "duration",       :default => 0
+    t.boolean  "display_flag",   :default => true
+    t.boolean  "featured_flag",  :default => false
+    t.boolean  "main_flag",      :default => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.string   "player_url"
     t.integer  "width"
     t.integer  "height"
+    t.string   "user_video_url"
   end
 
 end
