@@ -1,3 +1,4 @@
-.container.video
-  .customVideoTitle= @video.title
-  .mainVideo= raw @video.embed_code
+.mainVideo
+  .container.video
+    .customVideoTitle= @video.title
+    = link_to image_tag(@video.thumbnail_url, width: 960, height: 539), @video.player_url, class: 'fancybox', 'data-width' => @video.width, 'data-height' => @video.height, 'data-title' => @video.title
