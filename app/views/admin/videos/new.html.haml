@@ -1,6 +1,9 @@
 - content_for :title do
   Add a Video
 
+= link_to 'Back to Videos', admin_videos_path, class: 'btn btn-primary btn-large marginBottom20'
+= link_to 'Edit videos', update_videos_admin_videos_path, class: 'btn btn-primary btn-large marginBottom20'
+
 .formContainer.largeForm.videoForm
   .formHeader Add a New Video
   = render 'form'
